@@ -68,7 +68,9 @@ class PlaywrightBot:
                     try:
                         decoded_data = self.decode_base64_items(response_body["items"])
                         if decoded_data:
-                            self.save_decoded_items(decoded_data)
+                            filtered_data = [ x for x in decoded_data if x["sport"] == "Calcio" ]
+                        if filtered_data:
+                            self.save_decoded_items(filtered_data)
                             print(f"Dati 'items' estratti e decodificati con successo!")
                     except Exception as e:
                         print(f"Errore nella decodifica base64: {e}")

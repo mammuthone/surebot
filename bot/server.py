@@ -10,7 +10,7 @@ def start_subprocess():
     """Esegue un subprocess ogni 60 secondi"""
     while True:
         print("🔄 Avvio subprocess...")
-        subprocess.Popen(["python3", "finderbet_v4.py"])  # Avvia uno script esterno
+        subprocess.Popen(["python3", "./bot/finderbet_v4.py"])  # Avvia uno script esterno
         time.sleep(600)  # Aspetta 600 secondi prima di rieseguire il subprocess
 
 def evaluate_data(data):
